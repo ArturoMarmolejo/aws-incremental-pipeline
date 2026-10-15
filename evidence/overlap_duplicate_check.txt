@@ -1,0 +1,3 @@
+running: SELECT COUNT(*) FROM (SELECT batch_id FROM gbfs.batch_log GROUP BY 1 H
+[0]
+done

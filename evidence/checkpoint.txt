@@ -1,0 +1,3 @@
+running: SELECT * FROM gbfs.pipeline_checkpoint
+['gbfs', '2026-10-15 18:00:00', 'b20261015T180000Z', '2026-10-15 18:19:57']
+done

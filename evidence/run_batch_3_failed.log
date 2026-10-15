@@ -1,0 +1,27 @@
+PLAN: {"batch_id": "b20261015T150000Z", "window_start": "2026-10-15T12:30:00Z", "window_end": "2026-10-15T15:00:00Z", "reused": false, "skip": false}
+11:02:39 arturo-gbfs-bronze-to-silver RUNNING
+11:03:00 arturo-gbfs-bronze-to-silver RUNNING
+11:03:21 arturo-gbfs-bronze-to-silver RUNNING
+11:03:42 arturo-gbfs-bronze-to-silver RUNNING
+11:04:03 arturo-gbfs-bronze-to-silver RUNNING
+11:04:24 arturo-gbfs-bronze-to-silver RUNNING
+11:04:45 arturo-gbfs-bronze-to-silver SUCCEEDED
+11:04:47 arturo-gbfs-silver-to-redshift RUNNING
+11:05:08 arturo-gbfs-silver-to-redshift RUNNING
+11:05:29 arturo-gbfs-silver-to-redshift RUNNING
+11:05:50 arturo-gbfs-silver-to-redshift RUNNING
+11:06:11 arturo-gbfs-silver-to-redshift RUNNING
+11:06:32 arturo-gbfs-silver-to-redshift RUNNING
+11:06:53 arturo-gbfs-silver-to-redshift RUNNING
+11:07:14 arturo-gbfs-silver-to-redshift RUNNING
+11:07:36 arturo-gbfs-silver-to-redshift SUCCEEDED
+running: INSERT INTO gbfs.station_status_canonical (
+running: INSERT INTO gbfs.station_status_canonical (
+running: INSERT INTO gbfs.dim_time (time_key, hour_start, date_value, hour_of_d
+running: UPDATE gbfs.dim_station
+running: INSERT INTO gbfs.dim_station (station_id, name, short_name, lat, lon, 
+running: INSERT INTO gbfs.fact_station_status (
+done
+FAILED at: simulated crash after process_batch
+running: UPDATE gbfs.batch_log
+done

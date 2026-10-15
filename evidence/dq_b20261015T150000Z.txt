@@ -1,0 +1,13 @@
+running: SELECT 'dup_canonical' AS check_name, COUNT(*) AS bad_rows FROM (
+['dup_canonical', 0]
+running: SELECT 'dup_fact' AS check_name, COUNT(*) AS bad_rows FROM (
+['dup_fact', 0]
+running: SELECT 'dup_dim_station' AS check_name, COUNT(*) AS bad_rows FROM (
+['dup_dim_station', 0]
+running: SELECT 'orphan_fact_station' AS check_name, COUNT(*) AS bad_rows
+['orphan_fact_station', 0]
+running: SELECT 'orphan_fact_time' AS check_name, COUNT(*) AS bad_rows
+['orphan_fact_time', 0]
+running: SELECT 'canonical_not_in_fact' AS check_name, COUNT(*) AS bad_rows
+['canonical_not_in_fact', 0]
+done

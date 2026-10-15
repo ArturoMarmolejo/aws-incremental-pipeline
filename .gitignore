@@ -1,0 +1,8 @@
+.venv/
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+terraform/ingest.zip
+.env
+*.zip
