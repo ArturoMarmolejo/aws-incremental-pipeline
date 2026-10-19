@@ -1,0 +1,41 @@
+PLAN: {"batch_id": "b20261019T143000Z", "window_start": "2026-10-15T16:00:00Z", "window_end": "2026-10-19T14:30:00Z", "reused": false, "skip": false}
+10:30:49 arturo-gbfs-bronze-to-silver RUNNING
+10:31:10 arturo-gbfs-bronze-to-silver RUNNING
+10:31:31 arturo-gbfs-bronze-to-silver RUNNING
+10:31:52 arturo-gbfs-bronze-to-silver RUNNING
+10:32:14 arturo-gbfs-bronze-to-silver RUNNING
+10:32:35 arturo-gbfs-bronze-to-silver SUCCEEDED
+10:32:37 arturo-gbfs-silver-to-redshift RUNNING
+10:32:58 arturo-gbfs-silver-to-redshift RUNNING
+10:33:19 arturo-gbfs-silver-to-redshift RUNNING
+10:33:40 arturo-gbfs-silver-to-redshift RUNNING
+10:34:01 arturo-gbfs-silver-to-redshift RUNNING
+10:34:22 arturo-gbfs-silver-to-redshift RUNNING
+10:34:43 arturo-gbfs-silver-to-redshift RUNNING
+10:35:04 arturo-gbfs-silver-to-redshift RUNNING
+10:35:25 arturo-gbfs-silver-to-redshift RUNNING
+10:35:46 arturo-gbfs-silver-to-redshift SUCCEEDED
+running: INSERT INTO gbfs.station_status_canonical (
+running: INSERT INTO gbfs.station_status_canonical (
+running: INSERT INTO gbfs.dim_time (time_key, hour_start, date_value, hour_of_d
+running: UPDATE gbfs.dim_station
+running: INSERT INTO gbfs.dim_station (station_id, name, short_name, lat, lon, 
+running: INSERT INTO gbfs.fact_station_status (
+done
+running: SELECT 'dup_canonical' AS check_name, COUNT(*) AS bad_rows FROM (
+['dup_canonical', 0]
+running: SELECT 'dup_fact' AS check_name, COUNT(*) AS bad_rows FROM (
+['dup_fact', 0]
+running: SELECT 'dup_dim_station' AS check_name, COUNT(*) AS bad_rows FROM (
+['dup_dim_station', 0]
+running: SELECT 'orphan_fact_station' AS check_name, COUNT(*) AS bad_rows
+['orphan_fact_station', 0]
+running: SELECT 'orphan_fact_time' AS check_name, COUNT(*) AS bad_rows
+['orphan_fact_time', 0]
+running: SELECT 'canonical_not_in_fact' AS check_name, COUNT(*) AS bad_rows
+['canonical_not_in_fact', 0]
+done
+running: UPDATE gbfs.pipeline_checkpoint
+running: UPDATE gbfs.batch_log
+done
+BATCH b20261019T143000Z COMPLETED
